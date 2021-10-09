@@ -19,6 +19,15 @@ class LinkedList:
             Node.next = self.head
             self.head = Node
 
+    def insertEnd(self, Node):
+        if self.head == None:
+            self.head = Node
+        else:
+            temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = Node
+
 class Node:
     def __init__(self, data = None):
         self.data = data
@@ -30,8 +39,10 @@ class Node:
 node1 = Node(1)
 node2 = Node(2)
 node3 = Node(3)
+node4 = Node(4)
 list1 = LinkedList()
 list1.head = node1
 node1.next = node2
 list1.insertHead(node3)
+list1.insertEnd(node4)
 list1.printList()
