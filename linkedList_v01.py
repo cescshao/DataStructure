@@ -1,6 +1,7 @@
 class LinkedList:
     def __init__(self):
         self.head = None
+
     def printList(self):
         str1 = ""
         temp = self.head
@@ -10,6 +11,13 @@ class LinkedList:
             temp = temp.next
         str1 += "None"
         print(str1)
+
+    def insertHead(self, Node):
+        if self.head == None:
+            self.head = Node
+        else:
+            Node.next = self.head
+            self.head = Node
 
 class Node:
     def __init__(self, data = None):
@@ -21,7 +29,9 @@ class Node:
 
 node1 = Node(1)
 node2 = Node(2)
+node3 = Node(3)
 list1 = LinkedList()
 list1.head = node1
 node1.next = node2
+list1.insertHead(node3)
 list1.printList()
